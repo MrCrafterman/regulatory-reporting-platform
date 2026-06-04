@@ -268,4 +268,9 @@ public class FileStorageService {
         return filePath;
     }
 
+    public byte[] loadAsBytes(String relativeStoragePath) throws IOException {
+        Path filePath = resolvePath(relativeStoragePath);
+        return Files.readAllBytes(filePath);
+    }
+
 }
